@@ -1,0 +1,237 @@
+// Colour Pallete
+$primary: #f87060;
+$dark: #102542;
+$light: #cdd7d6;
+$success: #b3a394;
+$white: #ffffff;
+$title-color: #102542;
+$subtitle-color: #b3a394;
+
+//Global
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+}
+
+body {
+  overflow-y: hidden;
+}
+a, .link {
+  text-decoration: none;
+  color: inherit;
+}
+.try-again-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+//Home Page
+
+.homepage {
+
+  .install-btn {
+    width: 5vw;
+    margin: 5px;
+    margin-left: 90vw;
+    background: none;
+    border: none;
+  }
+  .hero-body {
+    padding-top: 1rem;
+  h2.subtitle {
+    padding-top: 1rem;
+  }
+  .home-recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .recipe-picture {
+      width: 500px;
+      border-radius: 10px;
+      margin: 10px 0;
+      @media screen and (max-width: 600px) {
+        width: calc(100vw - 10vw);
+      }
+    }
+    p.recipe-title {
+      border-radius: 10px;
+      width: 500px;
+      text-align: center;
+      color: $title-color;
+      opacity: 0.7;
+      @media screen and (max-width: 600px) {
+        font-size: 0.9rem;
+        width: calc(100vw - 10vw);
+      }
+    }
+    .home-options {
+      text-align: center;
+      font-size: 0.9rem;
+      span {
+        padding: 0 3px;
+      }
+      .try-again-btn,
+      a.link {
+        color: $primary;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+}
+
+//RecipeIndex
+.recipeindex {
+  .searches {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    @media screen and (max-width: 600px) {
+      justify-content: space-between;
+      margin:10px 0;
+      }
+
+    .searchform, .dropdown {
+      width: 40vw;
+      height: 2rem;
+      font-size: 0.8rem;
+    }
+    .input{
+        font-size: 0.8rem;
+      }
+  }
+  div.recipecard {
+
+    div.media-content {
+      height: 10vh;
+      padding: 0 8px;
+      @media screen and (max-width: 600px) {
+      height: 14vh;
+      }
+      .title {
+        padding-top: 10px;
+        font-size: 0.8rem;
+      }
+      .subtitle {
+        position: absolute;
+        bottom: 10px;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+
+//RecipeShow
+div.recipeshow {
+
+  @media screen and (max-width:600px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  .recipe-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+  }
+  .cooking-info {
+    display: flex;
+    justify-content: space-between;
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    @media screen and (max-width:600px) {
+    flex-direction: column;
+    }
+  }
+  .recipemethod {
+    margin: 10px 10px 10px 20px;
+    .method {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+  }
+  .ingredients {
+    columns: 2;
+    margin-bottom: 20px;
+
+    li {
+      padding: 3px;
+      font-size: 0.9rem;
+    }
+  }
+  .commentbox {
+    form {
+      display: flex;
+      margin-bottom: 1rem;
+      .input {
+        flex-grow: 2;
+        border-radius: 10px 0 0 10px;
+      }
+      .button.is-light {
+        border-radius: 0 10px 10px 0;
+      }
+    }
+  }
+  .commentcard {
+    background-color: inherit;
+    height: fit-content;
+    margin: 0;
+    .message-header {
+      background-color: inherit;
+      color: $subtitle-color;
+      padding-bottom: 0;
+      justify-content: flex-start;
+      .delete {
+        margin-left: auto;
+      }
+      .left {
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        text-align: left;
+        p {
+          align-self: flex-start;
+          margin-left: 5px;
+          font-weight: 400;
+          @media screen and (max-width: 600px) {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  .message-body {
+    padding-top: 0.3rem;
+    padding-bottom: 0;
+    @media screen and (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
+  hr {
+    margin: 0.5rem 0;
+  }
+}
+
+// Forms
+label.label {
+  color: $success;
+}
+option {
+  color: $success;
+}
+
+@import "~bulma/bulma.sass";
