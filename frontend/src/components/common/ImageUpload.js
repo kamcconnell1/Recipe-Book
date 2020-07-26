@@ -19,7 +19,7 @@ class ImageUpload extends React.Component {
     console.log(res.data)
     //* Set state with link to image sent in response data
     this.setState({
-      image: res.data.url
+      image: res.data.secure_url
     }, () => {
       //* Use setstates callback function to pass the updated state into the function and back into formData on read page 
       this.props.onChange({ target: { name: this.props.name, value: this.state.image } })
