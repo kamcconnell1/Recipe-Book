@@ -75,8 +75,11 @@ class RecipeEdit extends React.Component {
 
   render() {
     return (
+      <div className='recipeadd'>
       <section className="section">
         <div className="container">
+        <h2 className="title has-text-centered">Update Recipe</h2>
+            <hr />
           <RecipeForm
             formData={this.state.formData}
             handleMultiChange={this.handleMultiChange}
@@ -87,6 +90,7 @@ class RecipeEdit extends React.Component {
           />
         </div>
       </section>
+      </div>
     )
   }
 }

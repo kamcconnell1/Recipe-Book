@@ -53,7 +53,11 @@ const RecipeForm = ({formData, handleChange, handleMethodChange, handleMultiChan
                     onChange={handleChange}
                     value={formData.image}
                     />
-                    <p>Or upload file here</p>
+                    </div>
+                    </div>
+                    <div className='field'>
+                    <label className="label">Or upload file here</label>
+                    <div className="control">
                     <ImageUpload 
                       onChange={handleChange}
                       preset={uploadClothesImage}

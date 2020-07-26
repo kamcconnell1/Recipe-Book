@@ -67,8 +67,11 @@ handleSubmit = async event => {
 console.log('form', this.state.formData)
 
     return (
+      <div className='recipeadd'>
       <section className="section">
         <div className="container">
+        <h2 className="title has-text-centered">Add a Recipe</h2>
+            <hr />
           <RecipeForm
           formData={this.state.formData}
           handleMultiChange={this.handleMultiChange}
@@ -80,6 +83,7 @@ console.log('form', this.state.formData)
           
         </div>
       </section>
+      </div>
     )
   }
 }

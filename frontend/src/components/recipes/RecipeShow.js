@@ -5,7 +5,7 @@ import RecipeMethod from './RecipeMethod'
 import CommentBox from '../comments/CommentBox'
 import CommentCard from '../comments/CommentCard'
 
-import { isOwner } from '../../lib/auth'
+import { isOwner, isAuthenticated } from '../../lib/auth'
 import { getRecipe, addComment, deleteComment, deleteRecipe } from '../../lib/api'
 
 
@@ -125,12 +125,14 @@ class RecipeShow extends React.Component {
                 <p className="subtitle is-6 added-by">Added By: {recipe.user.username}</p>
                 <p className="subtitle is-6 added-by">Credit: {recipe.author}</p>
                 <br />
+                { isAuthenticated() && 
                 <CommentBox
                   handleChange={this.handleChange}
                   handleAddComment={this.handleAddComment}
                   recipe={this.state.recipe}
                   comments={this.state.comments}
                 />
+                }
                 <div className="comments">
                   {commentsArr.reverse().map(comment =>
                     <CommentCard

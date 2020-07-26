@@ -14,7 +14,7 @@ class Navbar extends React.Component {
 
   handleLogout = () => {
     logout() 
-    this.props.history.push('/')
+    this.props.history.push('/recipes')
   }
 
   componentDidUpdate(prevProps) {
