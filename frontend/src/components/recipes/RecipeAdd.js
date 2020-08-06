@@ -70,9 +70,7 @@ class RecipeAdd extends React.Component {
     return (
       <div className='recipeadd'>
         <div className='page-title'>
-          <h1 className="title has-text-centered">
-            Add a Recipe
-                </h1>
+          <h1 className="title has-text-centered">Add a Recipe</h1>
         </div>
         <section className="section">
           <div className="container">

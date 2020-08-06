@@ -30,20 +30,32 @@ If you want to view the app directly from your home screen:
 
 ![Register Page](./frontend/src/assets/readme/register.png)
 
-3. Recipe Index Page 
+2. Login Page 
+
+![Login Page](./frontend/src/assets/readme/login.png)
+
+3. Recipe Index Page - users can search for a recipe based on name or ingredients and filter by meal
 
 ![Recipe Index](./frontend/src/assets/readme/recipeindex.png)
 
-4. Recipe Show Page
+4. Recipe Show Page - if users are logged in they can add favourite recipes by clicking the heart and add comments/reviews to recipes
 
 ![Recipe Show Page](./frontend/src/assets/readme/recipeshow.png)
 ![Recipe Show Page](./frontend/src/assets/readme/recipeshow2.png)
 
-5. Add a Recipe - users can either add a url a picture of the recipe or they can add their own, the picture is stored on cloudinary.
+5. Add a Recipe - users can either add a url to a picture of the recipe or they can upload their own image which is stored on cloudinary.
 
 ![Recipe Add Page](./frontend/src/assets/readme/recipeadd.png)
 
-6. Edit a Recipe
+6. Created Recipes Page - users can view all the recipes they have uploaded from this page and either edit or delete the recipe from here
+
+![Recipes Created Page](./frontend/src/assets/readme/createdrecipes.png)
+
+7. Favourite Recipes Page - users favourites are stored in one place, removed by clicking the cross in the top right corner of each recipe
+
+![Favourites Page](./frontend/src/assets/readme/favouriterecipes.png)
+
+6. Edit Recipe Page
 
 ![Recipe edit Page](./frontend/src/assets/readme/recipeedit.png)
 
@@ -53,11 +65,11 @@ Users can do the following:
 * Register & Login
 * Post, edit, delete recipes
 * Add comments to recipes
+* Add and remove recipes from their favourites
 * The app can be used either within the browser or as a progressive web app
 
 
 ### Future Features 
 
 Additional features I would like to include are
-* Favourites Page
 * Weekly recipe diary & shopping list 

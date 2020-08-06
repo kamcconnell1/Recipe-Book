@@ -79,10 +79,11 @@ class RecipeEdit extends React.Component {
     
     return (
       <div className='recipeedit'>
+        <div className='page-title'>
+          <h1 className="title has-text-centered">Edit Recipe</h1>
+        </div>
       <section className="section">
         <div className="container">
-        <h2 className="title has-text-centered">Update Recipe</h2>
-            <hr />
           <RecipeEditForm
             formData={this.state.formData}
             handleMultiChange={this.handleMultiChange}
