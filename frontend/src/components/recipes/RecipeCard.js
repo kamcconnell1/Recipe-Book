@@ -15,7 +15,6 @@ const RecipeCard = ({ name, image, _id, cookingTime, handleRemoveRecipe, handleE
         </div>
         <div className="media-content ">
           <p className="title is-6">{name}</p>
-          <p className="subtitle  is-6 ">Time:  {cookingTime} mins</p>
         </div>
       </div>
     </Link>
