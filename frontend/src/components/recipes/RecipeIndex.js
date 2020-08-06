@@ -7,7 +7,7 @@ import RecipeCard from './RecipeCard'
 
 class RecipeIndex extends React.Component {
   state = {
-    recipes: [], 
+    recipes: [],
     searchQuery: '',
     filteredRecipes: [],
     selectedOption: 'all'
@@ -26,9 +26,9 @@ class RecipeIndex extends React.Component {
     const searchQuery = event.target.value
     const filteredRecipes = this.state.recipes.filter(recipe => {
       const regexp = new RegExp(searchQuery, 'i')
-      return recipe.name.match(regexp) || recipe.ingredients.match(regexp) 
+      return recipe.name.match(regexp) || recipe.ingredients.match(regexp)
     })
-    this.setState({ searchQuery, filteredRecipes})
+    this.setState({ searchQuery, filteredRecipes })
   }
 
   filterMeals = event => {
@@ -37,13 +37,13 @@ class RecipeIndex extends React.Component {
     if (selectedOption === 'All') {
       filteredRecipes = this.state.recipes
     } else {
-    filteredRecipes = this.state.recipes.filter(recipe => {
-      return (recipe.meal.indexOf(selectedOption) >= 0)
-    })
-  }
+      filteredRecipes = this.state.recipes.filter(recipe => {
+        return (recipe.meal.indexOf(selectedOption) >= 0)
+      })
+    }
     console.log(filteredRecipes);
-    
-    this.setState({ selectedOption, filteredRecipes})
+
+    this.setState({ selectedOption, filteredRecipes })
   }
 
 
@@ -51,15 +51,15 @@ class RecipeIndex extends React.Component {
 
     return (
       <div className="recipeindex">
+        <div className='page-title'>
+          <h1 className="title has-text-centered">Recipes</h1>
+        </div>
         <section className="section" >
           <div className="container">
-          <h1 className="title has-text-centered">
-                    Recipes
-                </h1>
-        <div className='searches'>
-          <SearchForm onChange={this.filterRecipes} query={this.state.searchQuery} />
-          <Dropdown onChange={this.filterMeals} />
-        </div>
+            <div className='searches'>
+              <SearchForm onChange={this.filterRecipes} query={this.state.searchQuery} />
+              <Dropdown onChange={this.filterMeals} />
+            </div>
             <div className="columns is-multiline is-mobile">
               {this.state.filteredRecipes.map(recipe => (
                 <RecipeCard key={recipe.name}{...recipe} />

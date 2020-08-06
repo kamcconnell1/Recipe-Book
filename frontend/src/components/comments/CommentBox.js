@@ -7,8 +7,8 @@ const CommentBox = ({handleAddComment, handleChange, comments}) => {
     return (
       <div className="commentbox">
       <form onSubmit={handleAddComment}>
-          <input
-          className="input"  
+          <input 
+          className="input is-small"  
           type="text"
           name="text"
           placeholder="Add a comment..." 
@@ -17,7 +17,7 @@ const CommentBox = ({handleAddComment, handleChange, comments}) => {
           />
             <button 
             type="submit"
-            className="button is-light"
+            className="button is-light is-small"
             >Submit</button>
       </form>
     </div>

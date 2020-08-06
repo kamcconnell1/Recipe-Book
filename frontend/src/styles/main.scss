@@ -6,6 +6,8 @@ $success: #b3a394;
 $white: #ffffff;
 $title-color: #102542;
 $subtitle-color: #b3a394;
+$fontmain: 'Acme', sans-serif;
+$fontsub: 'Lato', sans-serif;
 
 //Global
 
@@ -13,6 +15,7 @@ $subtitle-color: #b3a394;
   margin: 0;
   padding: 0;
   font-size: 15px;
+  font-family: $fontsub;
 
   @media screen and (max-width: 600px) {
     font-size: 10px;
@@ -22,7 +25,8 @@ $subtitle-color: #b3a394;
 body {
   overflow-y: hidden;
 }
-a, .link {
+a,
+.link {
   text-decoration: none;
   color: inherit;
 }
@@ -36,10 +40,56 @@ a, .link {
   outline: inherit;
 }
 
+a.navbar-item, span.navbar-item {
+  font-size: 15px;
+}
+
+.page-title {
+  background-color: $light;
+  padding: 1rem 0;
+  @media screen and (max-width:600px) {
+    padding: 0.5rem 0;
+  }
+  h1.title {
+    font-family: $fontmain;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @media screen and (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+input.input, textarea.textarea{
+  font-family: $fontsub;
+  font-size: 0.8rem;
+}
+section.section {
+  padding: 0 1.5rem;
+}
+
+// Forms
+label.label {
+  color: $success;
+}
+option {
+  color: $success;
+}
+
 //Home Page
 
 .homepage {
-
+  max-height: calc(100vh - 3.25rem);
+  section.hero.is-medium.is-light.is-bold.is-fullheight-with-navbar > div.hero-body {
+    padding: 4rem 1.5rem;
+    @media screen and (max-width: 600px) {
+      padding-top: 2rem;
+    }
+    h1.title, h2.subtitle {
+      font-family: $fontmain;
+      color: $title-color;
+    }
+  }
   .install-btn {
     width: 5vw;
     margin: 5px;
@@ -49,102 +99,160 @@ a, .link {
   }
   .hero-body {
     padding-top: 1rem;
-  h2.subtitle {
-    padding-top: 1rem;
-  }
-  .home-recipe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .recipe-picture {
-      width: 500px;
-      border-radius: 10px;
-      margin: 10px 0;
-      @media screen and (max-width: 600px) {
-        width: calc(100vw - 10vw);
-      }
+    h2.subtitle {
+      padding-top: 1rem;
     }
-    p.recipe-title {
-      border-radius: 10px;
-      width: 500px;
-      text-align: center;
-      color: $title-color;
-      opacity: 0.7;
-      @media screen and (max-width: 600px) {
+    .home-recipe {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .recipe-picture {
+        max-height: 70vh;
+        border-radius: 10px;
+        margin: 10px 0;
+        @media screen and (max-width: 600px) {
+          max-height: 50vh;
+        }
+      }
+      p.recipe-title {
+        border-radius: 10px;
+        width: 500px;
+        text-align: center;
+        color: $title-color;
+        opacity: 0.7;
+        @media screen and (max-width: 600px) {
+          font-size: 0.9rem;
+          width: calc(100vw - 10vw);
+        }
+      }
+      .home-options {
+        text-align: center;
         font-size: 0.9rem;
-        width: calc(100vw - 10vw);
-      }
-    }
-    .home-options {
-      text-align: center;
-      font-size: 0.9rem;
-      span {
-        padding: 0 3px;
-      }
-      .try-again-btn,
-      a.link {
-        color: $primary;
-        font-size: 1rem;
+        span {
+          padding: 0 3px;
+        }
+        .try-again-btn,
+        a.link {
+          color: $primary;
+          font-size: 1rem;
+        }
       }
     }
   }
-}
 }
 
 //RecipeIndex
 .recipeindex {
   .searches {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: 10px;
-    @media screen and (max-width: 600px) {
-      justify-content: space-between;
-      margin:10px 0;
-      }
-
-    .searchform, .dropdown {
+    margin: 1rem 0;
+    .searchform,
+    .dropdown {
       width: 40vw;
       height: 2rem;
       font-size: 0.8rem;
+      outline: none;
     }
-    .input{
-        font-size: 0.8rem;
-      }
+    .input {
+      font-size: 0.8rem;
+    }
   }
-  div.recipecard {
-
-    div.media-content {
-      height: 10vh;
-      padding: 0 8px;
-      @media screen and (max-width: 600px) {
-      height: 14vh;
-      }
-      .title {
-        padding-top: 10px;
-        font-size: 0.8rem;
-      }
-      .subtitle {
-        position: absolute;
-        bottom: 10px;
-        font-size: 0.7rem;
-      }
+  .recipecard{
+    .remove-recipe-btn, .edit-recipe-btn {
+      display: none;
     }
   }
 }
+  div.recipecard {
+    padding: 2px;
+    .card {
+      box-shadow: none;
+      .image {
+        position: relative;
+        img.recipe-image  {
+          border-radius: 5px 5px 0 0;
+        }
+        .fa-times-circle {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 1.5rem;
+        }
+      }
+      div.media-content {
+        height: 8vh;
+        padding: 0 8px;
+        @media screen and (max-width: 600px) {
+          padding: 0 4px;
+          height: 3rem;
+        }
+        .title {
+          padding-top: 5px;
+          font-size: 0.8rem;
+          @media screen and (max-width: 600px) {
+            font-size: 0.7rem;
+          }
+        }
+        .subtitle {
+          position: absolute;
+          bottom: 10px;
+          font-size: 0.7rem;
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 
 
 //RecipeShow
 div.recipeshow {
-
-  @media screen and (max-width:600px) {
+  section.section {
+    padding: 2rem 1.5rem;
+  }
+  @media screen and (max-width: 600px) {
     .title {
       font-size: 1.5rem;
+    }
+  }
+  .image {
+    position: relative;
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.2rem;
+      text-shadow:1px 1px 	#FF1493;
+      &:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        70% {
+          transform: scale(.9);
+        }
+          100% {
+          transform: scale(1);
+        }
+      }
     }
   }
   .recipe-btns {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem;
+    .edit-button {
+      border-radius: 10px 0 0 10px;
+    }
+    .delete-button {
+      border-radius: 0 10px 10px 0;
+    }
   }
   .cooking-info {
     display: flex;
@@ -153,15 +261,15 @@ div.recipeshow {
       font-size: 1rem;
       margin-bottom: 5px;
     }
-    @media screen and (max-width:600px) {
-    flex-direction: column;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
     }
   }
   .recipemethod {
     margin: 10px 10px 10px 20px;
     .method {
       margin-bottom: 5px;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
   .ingredients {
@@ -226,12 +334,54 @@ div.recipeshow {
   }
 }
 
-// Forms
-label.label {
-  color: $success;
+// Recipe Edit
+
+.recipeedit {
+  .formerrors {
+    display: none;
+  }
 }
-option {
-  color: $success;
+
+// Created Recipes
+.recipescreated {
+  section.section {
+    padding: 1rem 1.5rem;
+  
+  .recipecard {
+    position: relative;
+  }
+  .remove-recipe-btn, .edit-recipe-btn {
+    position: absolute;
+    top: 2px;
+    @media screen and (max-width: 600px) {
+      padding: 0.5rem;
+      height: 1rem;
+    }
+  }
+  .remove-recipe-btn {
+    right: 2px;
+  }
+  .edit-recipe-btn {
+    left: 2px;
+  }
+}
+}
+
+.favourites {
+  section.section {
+    padding: 1rem 1.5rem;
+  .recipecard {
+    position: relative;
+  }
+  .remove-recipe-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .edit-recipe-btn {
+    display: none;
+  }
+}
 }
 
 @import "~bulma/bulma.sass";

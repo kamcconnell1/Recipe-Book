@@ -1,8 +1,8 @@
 const Recipe = require('../models/recipe')
 const { notFound, unauthorized } = require('../lib/errorMessages')
 
-// * Create the controllers for your resouce here (index, create), (show, update delete optional)
 
+//* Get all Recipes
 async function recipeIndex(req, res, next) {
   try {
     const recipes = await Recipe.find().populate('user').populate('comments.user')

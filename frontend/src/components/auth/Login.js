@@ -7,13 +7,14 @@ class Login extends React.Component {
     formData: {
       username: '',
       password: ''
-    }
+    }, 
+    error: ''
   }
 
   handleChange = event => {
 
     const formData = { ...this.state.formData, [event.target.name]: event.target.value }
-    this.setState({ formData })
+    this.setState({ formData, error: '' })
   }
 
   handleSubmit = async event => {
@@ -24,11 +25,12 @@ class Login extends React.Component {
       this.setGlobal({token: res.data.token})
       this.props.history.push('/recipes')
     } catch (err) {
-      console.log(err);
+      this.setState({ error: 'Invalid Credentials' })
     }
   }
 
   render() {
+    const { formData, error } = this.state
 
     return (
       <section className="section">
@@ -39,11 +41,11 @@ class Login extends React.Component {
                 <label className="label">Username</label>
                 <div className="control">
                   <input
-                    className='input is-success'
+                    className={`input  ${error ? 'is-primary' : 'is-success' }`}
                     placeholder="Username"
                     name="username"
                     onChange={this.handleChange}
-                  // value={formData.username}
+                  value={formData.username}
                   />
                 </div>
               </div>
@@ -51,14 +53,15 @@ class Login extends React.Component {
                 <label className="label">Password</label>
                 <div className="control">
                   <input
-                    className='input is-success'
+                    className={`input ${error ? 'is-primary' : 'is-success' }`}
                     type="password"
                     placeholder="Password"
                     name="password"
                     onChange={this.handleChange}
-                  // value={formData.password}
+                  value={formData.password}
                   />
                 </div>
+                {error && <small className="help is-primary">{error}</small>}
               </div>
               <div className="field">
                 <button type="submit" className="button is-fullwidth is-primary">Login</button>

@@ -4,7 +4,7 @@ import ImageUpload from '../common/ImageUpload'
 import { uploadClothesImage } from '../../lib/api'
 
 
-const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleMultiChange, handleSubmit, buttonText}) => {
+const RecipeEditForm = ({formData, handleChange, handleMethodChange, handleMultiChange, handleSubmit, buttonText}) => {
   
   const { method } = formData
   
@@ -29,7 +29,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={formData.name || ''}
                     />
                 </div>
-                {errors.name && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <label className="label">Meal</label>
@@ -42,7 +41,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                 onChange={handleMultiChange}
                 />
                 </div>
-                {errors.name && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <label className="label">Image</label>
@@ -66,7 +64,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                       name="image"
                     />
                 </div>
-                {errors.image && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <label className="label">Ingredients</label>
@@ -80,7 +77,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={formData.ingredients}
                     />
                 </div>
-                {errors.ingredients && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
               <label className="label">Method</label>
@@ -95,7 +91,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={method.stepOne}
                     />
                 </div>
-                {errors.ingredients && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <div className="control">
@@ -170,7 +165,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={formData.cookingTime}
                     />
                 </div>
-                {errors.cookingTime && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <label className="label">Cooking Temperature</label>
@@ -197,7 +191,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={formData.serves}
                     />
                 </div>
-                {errors.serves && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <label className="label">Credit</label>
@@ -211,7 +204,6 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
                     value={formData.credit}
                     />
                 </div>
-                {errors.credit && <small className="help is-primary">Required Field</small>}
               </div>
               <div className="field">
                 <button type="submit" className="button is-fullwidth is-primary ">{buttonText}</button>
@@ -223,4 +215,4 @@ const RecipeForm = ({formData, errors, handleChange, handleMethodChange, handleM
 
 
 
-export default RecipeForm
+export default RecipeEditForm

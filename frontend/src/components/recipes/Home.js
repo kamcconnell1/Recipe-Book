@@ -28,7 +28,6 @@ class Home extends React.Component {
     if (!this.state.recipe) return null
 
     const { recipe } = this.state
-    
 
     return (
       <div className="homepage">
@@ -41,10 +40,10 @@ class Home extends React.Component {
                     Home Cooking Collection
                 </h1>
                   <h2 className="subtitle is-light">
-                    For when you can't remember any of the nice things you've cooked before
+                    For when you can't remember anything you've cooked before
                 </h2>
                 </div>
-                <div className="column home-recipe">
+                <div className="column has-text-centered home-recipe">
                   <Link to={`/recipes/${recipe._id}`}>
                     <p className='recipe-title'>Why not try {recipe.name} today?</p>
                     <img className='recipe-picture' src={recipe.image} alt={recipe.name} />

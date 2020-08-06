@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { getRecipe, editRecipe } from '../../lib/api'
-import RecipeForm from './RecipeForm'
+import RecipeEditForm from './RecipeEditForm'
 
 class RecipeEdit extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class RecipeEdit extends React.Component {
       stepFour: '',
       stepFive: ''},
       cookingTime: '',
-      notes: ''
+      serves: ''
     }, 
     errors: {}
   }
@@ -74,13 +74,16 @@ class RecipeEdit extends React.Component {
   }
 
   render() {
+
+    if (!this.state.formData) return null 
+    
     return (
-      <div className='recipeadd'>
+      <div className='recipeedit'>
       <section className="section">
         <div className="container">
         <h2 className="title has-text-centered">Update Recipe</h2>
             <hr />
-          <RecipeForm
+          <RecipeEditForm
             formData={this.state.formData}
             handleMultiChange={this.handleMultiChange}
             handleMethodChange={this.handleMethodChange}

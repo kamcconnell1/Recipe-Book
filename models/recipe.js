@@ -17,8 +17,8 @@ const recipeSchema = new mongoose.Schema({
   method: { type: Object, required: true },
   cookingTime: { type: Number, required: true }, 
   cookingTemp: { type: Number, required: false }, 
-  serves: { type: Number, required: false }, 
-  author: { type: String, required: false },
+  serves: { type: Number, required: true }, 
+  credit: { type: String, required: true },
   comments: [commentSchema],
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
