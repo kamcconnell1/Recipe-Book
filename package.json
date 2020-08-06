@@ -1,10 +1,10 @@
 {
   "name": "restful-api",
   "version": "1.0.0",
-  "description": "",
-    "engines": {
-      "node": "14.x"
-    },
+  "description": "This app has been built to enable you to store all your everyday recipes in one place so you never have to struggle to think of what to cook for dinner again. An online 'recipe share' you can view recipes uploaded by all users aswell as upload your own.",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +22,16 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.12",
     "mongoose-unique-validator": "^2.0.3"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamcconnell1/Recipe-Book.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kamcconnell1/Recipe-Book/issues"
+  },
+  "homepage": "https://github.com/kamcconnell1/Recipe-Book#readme"
 }
