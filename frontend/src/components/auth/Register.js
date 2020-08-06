@@ -33,71 +33,76 @@ class Register extends React.Component {
     const { formData, errors } = this.state
 
     return (
-      <section className="section">
-        <div className="container">
-          <div className="column is-6 is-offset-3">
-            <form onSubmit={this.handleSubmit} >
-              <div className="field">
-                <label className="label">Username</label>
-                <div className="control">
-                  <input
-                    className={`input ${errors.username ? 'is-primary' : 'is-success' }`}
-                    placeholder="Username"
-                    name="username"
-                    onChange={this.handleChange}
-                    value={formData.username}
-                  />
-                </div>
-                {errors.username && <small className="help is-primary">{errors.username}</small>}
-              </div>
-              <div className="field">
-                <label className="label">Email</label>
-                <div className="control">
-                  <input
-                    className={`input ${errors.email? 'is-primary' : 'is-success' }`}
-                    placeholder="Email"
-                    name="email"
-                    onChange={this.handleChange}
-                    value={formData.email}
-                  />
-                </div>
-                {errors.email && <small className="help is-primary">{errors.email}</small>}
-              </div>
-              <div className="field">
-                <label className="label">Password</label>
-                <div className="control">
-                  <input
-                    className={`input ${errors.password ? 'is-primary' : 'is-success' }`}
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    onChange={this.handleChange}
-                    value={formData.password}
-                  />
-                </div>
-                {errors.password && <small className="help is-primary">{errors.password}</small>}
-              </div>
-              <div className="field">
-                <label className="label">Password Confirmation</label>
-                <div className="control">
-                  <input
-                    type="password"
-                    className={`input ${errors.passwordConfirmation ? 'is-primary' : 'is-success' }`}
-                    placeholder="Password Confirmation"
-                    name="passwordConfirmation"
-                    onChange={this.handleChange}
-                    value={formData.passwordConfirmation}
-                  />
-                </div>
-                {errors.passwordConfirmation && <small className="help is-primary">{errors.passwordConfirmation}</small>}
-              </div>
-              <div className="field">
-                <button type="submit" className="button is-fullwidth is-primary">Register</button>
-              </div>
-            </form>
-          </div>
+      <div className='register'>
+        <div className='page-title'>
+          <h1 className="title has-text-centered">Register</h1>
         </div>
-      </section>
+        <section className="section">
+          <div className="container">
+            <div className="column is-6 is-offset-3">
+              <form onSubmit={this.handleSubmit} >
+                <div className="field">
+                  <label className="label">Username</label>
+                  <div className="control">
+                    <input
+                      className={`input is-rounded ${errors.username ? 'is-primary' : 'is-success'}`}
+                      placeholder="Username"
+                      name="username"
+                      onChange={this.handleChange}
+                      value={formData.username}
+                    />
+                  </div>
+                  {errors.username && <small className="help is-primary">{errors.username}</small>}
+                </div>
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control">
+                    <input
+                      className={`input is-rounded ${errors.email ? 'is-primary' : 'is-success'}`}
+                      placeholder="Email"
+                      name="email"
+                      onChange={this.handleChange}
+                      value={formData.email}
+                    />
+                  </div>
+                  {errors.email && <small className="help is-primary">{errors.email}</small>}
+                </div>
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control">
+                    <input
+                      className={`input is-rounded ${errors.password ? 'is-primary' : 'is-success'}`}
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      onChange={this.handleChange}
+                      value={formData.password}
+                    />
+                  </div>
+                  {errors.password && <small className="help is-primary">{errors.password}</small>}
+                </div>
+                <div className="field">
+                  <label className="label">Password Confirmation</label>
+                  <div className="control">
+                    <input
+                      type="password"
+                      className={`input is-rounded ${errors.passwordConfirmation ? 'is-primary' : 'is-success'}`}
+                      placeholder="Password Confirmation"
+                      name="passwordConfirmation"
+                      onChange={this.handleChange}
+                      value={formData.passwordConfirmation}
+                    />
+                  </div>
+                  {errors.passwordConfirmation && <small className="help is-primary">{errors.passwordConfirmation}</small>}
+                </div>
+                <div className="field">
+                  <button type="submit" className="button is-small  is-rounded is-primary">Register</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 }

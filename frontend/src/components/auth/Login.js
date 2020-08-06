@@ -7,7 +7,7 @@ class Login extends React.Component {
     formData: {
       username: '',
       password: ''
-    }, 
+    },
     error: ''
   }
 
@@ -22,7 +22,7 @@ class Login extends React.Component {
     try {
       const res = await loginUser(this.state.formData)
       setToken(res.data.token)
-      this.setGlobal({token: res.data.token})
+      this.setGlobal({ token: res.data.token })
       this.props.history.push('/recipes')
     } catch (err) {
       this.setState({ error: 'Invalid Credentials' })
@@ -33,43 +33,48 @@ class Login extends React.Component {
     const { formData, error } = this.state
 
     return (
-      <section className="section">
-        <div className="container">
-          <div className="column is-6 is-offset-3">
-            <form onSubmit={this.handleSubmit} >
-              <div className="field">
-                <label className="label">Username</label>
-                <div className="control">
-                  <input
-                    className={`input  ${error ? 'is-primary' : 'is-success' }`}
-                    placeholder="Username"
-                    name="username"
-                    onChange={this.handleChange}
-                  value={formData.username}
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Password</label>
-                <div className="control">
-                  <input
-                    className={`input ${error ? 'is-primary' : 'is-success' }`}
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    onChange={this.handleChange}
-                  value={formData.password}
-                  />
-                </div>
-                {error && <small className="help is-primary">{error}</small>}
-              </div>
-              <div className="field">
-                <button type="submit" className="button is-fullwidth is-primary">Login</button>
-              </div>
-            </form>
-          </div>
+      <div className='login'>
+        <div className='page-title'>
+          <h1 className="title has-text-centered">Login</h1>
         </div>
-      </section>
+        <section className="section">
+          <div className="container">
+            <div className="column is-6 is-offset-3">
+              <form onSubmit={this.handleSubmit} >
+                <div className="field">
+                  <label className="label">Username</label>
+                  <div className="control">
+                    <input
+                      className={`input is-rounded ${error ? 'is-primary' : 'is-success'}`}
+                      placeholder="Username"
+                      name="username"
+                      onChange={this.handleChange}
+                      value={formData.username}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control">
+                    <input
+                      className={`input is-rounded ${error ? 'is-primary' : 'is-success'}`}
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      onChange={this.handleChange}
+                      value={formData.password}
+                    />
+                  </div>
+                  {error && <small className="help is-primary">{error}</small>}
+                </div>
+                <div className="field">
+                  <button type="submit" className="button is-rounded is-primary is-small">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 }

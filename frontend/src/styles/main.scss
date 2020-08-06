@@ -190,7 +190,7 @@ option {
         }
         .title {
           padding-top: 5px;
-          font-size: 0.8rem;
+          font-size: 1rem;
           @media screen and (max-width: 600px) {
             font-size: 0.7rem;
           }
@@ -198,7 +198,7 @@ option {
         .subtitle {
           position: absolute;
           bottom: 10px;
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           @media screen and (max-width: 600px) {
             display: none;
           }
@@ -243,17 +243,6 @@ div.recipeshow {
       }
     }
   }
-  .recipe-btns {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem;
-    .edit-button {
-      border-radius: 10px 0 0 10px;
-    }
-    .delete-button {
-      border-radius: 0 10px 10px 0;
-    }
-  }
   .cooking-info {
     display: flex;
     justify-content: space-between;
@@ -281,7 +270,15 @@ div.recipeshow {
       font-size: 0.9rem;
     }
   }
+  .recipe-credits {
+    margin-right: 1rem;
+    .added-by {
+      font-size: 0.9rem;
+      text-align: right;
+    }
+  }
   .commentbox {
+    margin-top: 1rem;
     form {
       display: flex;
       margin-bottom: 1rem;

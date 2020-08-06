@@ -37,16 +37,6 @@ class RecipeShow extends React.Component {
     }
   }
 
-  // handleDeleteRecipe = async event => {
-  //   try {
-  //     const recipeId = this.props.match.params.id
-  //     await deleteRecipe(recipeId)
-  //     this.props.history.push('/recipes')
-  //   } catch (err) {
-  //     console.log(err.response)
-  //   }
-  // }
-
   //* Comments on the recipe
   handleChange = event => {
     const comments = { ...this.state.comments, [event.target.name]: event.target.value }
@@ -103,19 +93,12 @@ handleAddToFavourites = async event => {
               <div className="column is-half">
                 <figure className="image">
                   <img src={recipe.image} alt={recipe.name} />
-                  <button className='try-again-btn' onClick={this.handleAddToFavourites} name='recipe' value={recipe._id}>
+                  <button className='try-again-btn' onClick={this.handleAddToFavourites} name='recipe' value={recipe._id} title='Add to Favourites'>
                   <span className="icon is-large has-text-primary">
                   <i  className="fas fa-2x fa-heart" ></i>
                   </span>
                   </button>
                 </figure>
-                {/* <div className='recipe-btns'>
-                {isOwner(recipe.user._id) && <Link to={`/recipes/${recipe._id}/edit`} className="button is-success is-fullwidth is-small edit-button ">Edit Recipe</Link>}
-                {isOwner(recipe.user._id) &&
-                  <button
-                    className="button is-small is-fullwidth delete-button"
-                    onClick={this.handleDeleteRecipe}>Delete Recipe</button>}
-                    </div> */}
               </div>
               <div className="column is-half">
                 <div className='cooking-info'>
@@ -136,9 +119,11 @@ handleAddToFavourites = async event => {
                     <hr />
                 <h5 className="title is-4">Method</h5>
                 <RecipeMethod {...recipe} />
-                <p className="subtitle is-6 added-by">Added By: {recipe.user.username}</p>
-                <p className="subtitle is-6 added-by">Credit: {recipe.credit}</p>
-                <br />
+                <div className='recipe-credits'>
+                <p className="has-text-success added-by">Added By: {recipe.user.username}</p>
+                <p className="has-text-success added-by">Credit: {recipe.credit}</p>
+                </div>
+                <hr />
                 { isAuthenticated() && 
                 <CommentBox
                   handleChange={this.handleChange}
